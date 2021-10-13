@@ -43,9 +43,9 @@ router.get('/', async (req, res) => {
       description: req.body.description
     })
     saveCover(book, req.body.cover)
-  
+   
     try {
-      const newBook = await book.save()
+     const newBook = await book.save()
       res.redirect(`books/${newBook.id}`)
     } catch {
       renderNewPage(res, book, true)
